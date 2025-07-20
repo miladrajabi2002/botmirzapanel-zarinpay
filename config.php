@@ -18,6 +18,7 @@ $APIKEY = "{BOT_TOKEN}"; // توکن ربات خود را وارد کنید
 $adminnumber = "{ADMIN_#ID}";// آیدی عددی ادمین
 $domainhosts = "{DOMAIN.COM/PATH/BOT}";// دامنه  هاست و مسیر سورس بدون / اخر
 $usernamebot = "{BOT_USERNAME}"; //نام کاربری ربات  بدون @
+$zarinpay = '';
 
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
