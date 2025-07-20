@@ -435,6 +435,7 @@ $textbotlang['users']['moeny']['cart_to_Cart_btn'] = "💳 کارت به کار�
 $textbotlang['users']['moeny']['nowpaymentbtn'] = "💵 پرداخت nowpayments";
 $textbotlang['users']['moeny']['currency_rial_gateway'] = "💎 ارزی ریالی";
 $textbotlang['users']['moeny']['mr_payment_gateway'] = "🔵 آقای پرداخت";
+$textbotlang['users']['moeny']['ZariPay_btn'] = "زرین پی";
 $textbotlang['users']['moeny']['card_number_settings'] = "💳 تنظیم شماره کارت";
 $textbotlang['users']['moeny']['alsat_merchant_settings'] = "تنظیم مرچنت";
 $textbotlang['users']['moeny']['mr_payment_merchant_settings'] = "تنظیم مرچنت آقای پرداخت";
@@ -1314,6 +1315,11 @@ $textbotlang['Admin']['Report']['aqayepardakht'] = "💵 پرداخت جدید
 آیدی عددی کاربر : %s
 مبلغ تراکنش %s
 روش پرداخت :  درگاه آقای پرداخت";
+$textbotlang['Admin']['Report']['ZarinPay'] = "💵 پرداخت جدید
+        
+آیدی عددی کاربر : %s
+مبلغ تراکنش %s
+روش پرداخت :  درگاه زرین پی";
 $textbotlang['Admin']['Report']['nowpayment'] = "💵 پرداخت جدید
         
 آیدی عددی کاربر : %s
