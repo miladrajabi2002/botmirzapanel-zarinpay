@@ -32,7 +32,7 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
    'Content-Type: application/json',
-   'Authorization: Bearer ' . $accessToken
+   'Authorization: Bearer ' . $zarinpay
 ]);
 
 $response = curl_exec($ch);
