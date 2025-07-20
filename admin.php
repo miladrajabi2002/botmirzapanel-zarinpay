@@ -4,7 +4,7 @@
 $textadmin = ["panel", "/panel",$textbotlang['Admin']['commendadminmanagment'], $textbotlang['Admin']['commendadmin']];
 if (!in_array($from_id, $admin_ids)) {
     if (in_array($text, $textadmin)) {
-        sendmessage($from_id, $textbotlang['users']['Invalid-comment'], null, 'HTML');
+        sendmessage($from_id, $textbotlang['users']['Invalfid-comment'], null, 'HTML');
         foreach ($admin_ids as $admin) {
             $textadmin = sprintf($textbotlang['Admin']['Unauthorized-entry'],$username,$from_id,$first_name);
             sendmessage($admin, $textadmin, null, 'HTML');
@@ -1220,6 +1220,11 @@ if ($text == $textbotlang['Admin']['keyboardadmin']['finance']) {
                 ['text' => $textbotlang['users']['moeny']['setting'], 'callback_data' => "Settingaqayepardakht"],
                 ['text' => $status_qayepardakht, 'callback_data' => "editpay-aqayepardakht-".$sqlstatus_aqayepardakht],
                 ['text' => $textbotlang['users']['moeny']['mr_payment_gateway'], 'callback_data' => "none"],
+            ],
+            [
+                ['text' => $textbotlang['users']['moeny']['setting'], 'callback_data' => "none"],
+                ['text' => '✅', 'callback_data' => 'none'],
+                ['text' => $textbotlang['users']['moeny']['ZariPay_btn'], 'callback_data' => "none"],
             ],
             [
                 ['text' => $status_iranpay, 'callback_data' => "editpay-iranpay-".$sqlstatus_iranpay],
