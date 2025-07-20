@@ -1841,6 +1841,41 @@ if ($text == $datatextbot['text_Add_Balance'] || $text == "/wallet") {
         }
         step('cart_to_cart_user', $from_id);
     }
+    if ($datain == "ZarinPay") {
+        if ($user['Processing_value'] < 5000) {
+            sendmessage($from_id, $textbotlang['users']['Balance']['zarinpal'], null, 'HTML');
+            return;
+        }
+        sendmessage($from_id, $textbotlang['users']['Balance']['linkpayments'], $keyboard, 'HTML');
+        $dateacc = date('Y/m/d H:i:s');
+        $randomString = bin2hex(random_bytes(5));
+        $payment_Status = "Unpaid";
+        $Payment_Method = "ZarinPay";
+        if ($user['Processing_value_tow'] == "getconfigafterpay") {
+            $invoice = "{$user['Processing_value_tow']}|{$user['Processing_value_one']}";
+        } else {
+            $invoice = "0|0";
+        }
+        $stmt = $pdo->prepare("INSERT INTO Payment_report (id_user, id_order, time, price, payment_Status, Payment_Method,invoice) VALUES (?, ?, ?, ?, ?, ?,?)");
+        $stmt->bindParam(1, $from_id);
+        $stmt->bindParam(2, $randomString);
+        $stmt->bindParam(3, $dateacc);
+        $stmt->bindParam(4, $user['Processing_value'], PDO::PARAM_STR);
+        $stmt->bindParam(5, $payment_Status);
+        $stmt->bindParam(6, $Payment_Method);
+        $stmt->bindParam(7, $invoice);
+        $stmt->execute();
+        $paymentkeyboard = json_encode([
+            'inline_keyboard' => [
+                [
+                    ['text' => $textbotlang['users']['Balance']['payments'], 'url' => "https://" . "$domainhosts" . "/payment/ZarinPay/pay.php?price={$user['Processing_value']}&order_id=$randomString&user_id=$from_id"],
+                ]
+            ]
+        ]);
+        $user['Processing_value'] = number_format($user['Processing_value'], 0);
+        $textnowpayments = sprintf($textbotlang['users']['moeny']['ZarinPay'], $randomString, $user['Processing_value']);
+        sendmessage($from_id, $textnowpayments, $paymentkeyboard, 'HTML');
+    }
     if ($datain == "aqayepardakht") {
         if ($user['Processing_value'] < 5000) {
             sendmessage($from_id, $textbotlang['users']['Balance']['zarinpal'], null, 'HTML');
