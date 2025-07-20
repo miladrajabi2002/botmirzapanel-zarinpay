@@ -157,6 +157,9 @@ if($PaySettingaqayepardakht == "onaqayepardakht"){
     ];
 }
 $step_payment['inline_keyboard'][] = [
+    ['text' => $textbotlang['users']['moeny']['ZariPay_btn'] , 'callback_data' => "ZarinPay" ]
+];
+$step_payment['inline_keyboard'][] = [
     ['text' => $textbotlang['users']['closelist'] , 'callback_data' => "closelist" ]
 ];
 $step_payment = json_encode($step_payment);
