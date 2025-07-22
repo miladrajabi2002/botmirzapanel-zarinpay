@@ -49,7 +49,7 @@ $result = json_decode($response, true);
 if (isset($result['success']) && $result['success'] === true) {
    session_start();
    $_SESSION['authority'] = $result['authority'];
-   $_SESSION['order_id'] = $order_id;
+   $_SESSION['order_id'] = $invoice_id;
    header('Location: ' . 'https://www.zarinpal.com/pg/StartPay/' . $result['authority']);
    exit;
 } else {
