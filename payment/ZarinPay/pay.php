@@ -18,7 +18,7 @@ if($checkprice !=$amount){
     return;
 }
 $data = [
-     "amount" => $amount,
+     "amount" => $amount * 10,
    "order_id" => $invoice_id,
    "customer_user_id" => $user_id, 
    "description" => "خرید افزونه وردپرس"
