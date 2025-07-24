@@ -63,7 +63,7 @@ if (!empty($_SESSION['authority']) && !empty($_SESSION['order_id']) || isset($_P
               update("user","Processing_value_tow","0", "id",$Balance_id['id']);
               update("Payment_report","payment_Status","paid","id_order",$Payment_report['id_order']);
               if (strlen($setting['Channel_Report']) > 0) {
-                  sendmessage($setting['Channel_Report'], sprintf($textbotlang['Admin']['Report']['aqayepardakht'],$Payment_report['id_user'],$price), null, 'HTML');
+                  sendmessage($setting['Channel_Report'], sprintf($textbotlang['Admin']['Report']['ZarinPay'],$Payment_report['id_user'],$price), null, 'HTML');
               }
           }
       } else {
