@@ -1873,7 +1873,7 @@ if ($text == $datatextbot['text_Add_Balance'] || $text == "/wallet") {
             ]
         ]);
         $user['Processing_value'] = number_format($user['Processing_value'], 0);
-        $textnowpayments = sprintf($textbotlang['users']['moeny']['ZariPay_btn'], $randomString, $user['Processing_value']);
+        $textnowpayments = 'درگاه پرداخت با موفقیت ایجاد شد، ادامه دهید با دکمه زیر 👇';
         sendmessage($from_id, $textnowpayments, $paymentkeyboard, 'HTML');
     }
     if ($datain == "aqayepardakht") {
